@@ -1,0 +1,99 @@
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.order-summary {
+  height: 700px;
+  width: 400px;
+  border: 5px solid;
+  padding: 10px;
+  border-style: double;
+}
+.food-menu {
+  height: 700px;
+  width: 400px;
+  border: 5px solid;
+  padding: 10px;
+  border-style: double;
+  /* background-color: snow; */
+  font-family: cursive;
+}
+.summary {
+  display: flex;
+  justify-content: space-around;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+  font-size: 18px;
+}
+h2 {
+  text-align: center;
+}
+
+#total-amount {
+  height: 50px;
+  /* border: 1px solid; */
+  line-height: 50px;
+  text-align: right;
+  margin-right: 30px;
+  border-bottom: 2px solid #ddd;
+}
+
+.hide {
+  display: none;
+}
+td,
+tr {
+  border: 1px solid #ddd;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  font-size: 17px;
+}
+tr {
+  width: 400px;
+}
+#place-order {
+  margin-top: 300px;
+}
+.item-no {
+  width: 60px;
+  height: 30px;
+  font-weight: 700;
+  font-size: 18px;
+}
+.add {
+  float: right;
+  width: 60px;
+  height: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: cursive;
+}
+.items-list {
+  height: 70px;
+  font-size: 18px;
+  border-bottom: 1.5px solid LIGHTSLATEGRAY;
+  line-height: 70px;
+  display: grid;
+  grid-template-columns: 130px 80px 100px 100px;
+  align-items: center;
+}
+.delete {
+  float: right;
+  margin-top: 9px;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    flex-direction: column;
+  }
+}
