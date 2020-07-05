@@ -113,8 +113,19 @@ tr {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 380px) {
   .container {
     flex-direction: column;
+  }
+  .order-summary,
+  .food-menu {
+    width: 300px;
+  }
+  .items-list {
+    grid-template-columns: 110px 50px 50px 50px;
+    grid-gap: 10px;
+  }
+  .item-no {
+    width: 50px;
   }
 }
