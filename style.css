@@ -65,8 +65,6 @@ tr {
   cursor: pointer;
   background-color: LIGHTSKYBLUE;
   font-size: 20px;
-  position: fixed;
-  bottom: 35px;
 }
 .item-no {
   width: 60px;
