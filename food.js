@@ -179,6 +179,9 @@ function checkSum(sum) {
   }
 }
 
-placeOrder.addEventListener("click", () => {
-  alert("Order Placed");
-});
+function notification() {
+  placeOrder.addEventListener("click", () => {
+    alert("Order Placed");
+  });
+}
+notification();

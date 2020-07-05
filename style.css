@@ -3,7 +3,6 @@
   justify-content: space-evenly;
   align-items: center;
 }
-
 .order-summary {
   height: 700px;
   width: 400px;
@@ -36,19 +35,17 @@ th {
 h2 {
   text-align: center;
 }
-
 #total-amount {
   height: 50px;
-  /* border: 1px solid; */
   line-height: 50px;
   text-align: right;
   margin-right: 30px;
   border-bottom: 2px solid #ddd;
 }
-
 .hide {
   display: none;
 }
+
 td,
 tr {
   border: 1px solid #ddd;
@@ -61,7 +58,6 @@ tr {
   width: 400px;
 }
 #place-order {
-  /* margin-top: 350px; */
   margin-left: 140px;
   padding: 10px;
   border: 2px solid black;
