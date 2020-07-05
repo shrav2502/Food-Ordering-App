@@ -40,6 +40,7 @@ const items = [
     id: "8",
   },
 ];
+
 const menu = document.querySelector(".menu");
 const summary = document.querySelector(".summary");
 const totalAmount = document.querySelector("#total-amount");
@@ -79,56 +80,58 @@ const table = document.createElement("table");
 
 function addItems(button, item, input) {
   button.addEventListener("click", () => {
-    const tr = document.createElement("tr");
+    if (input.value != 0) {
+      const tr = document.createElement("tr");
 
-    let td1 = document.createElement("td");
-    let td2 = document.createElement("td");
-    let td3 = document.createElement("td");
-    let td4 = document.createElement("td");
+      let td1 = document.createElement("td");
+      let td2 = document.createElement("td");
+      let td3 = document.createElement("td");
+      let td4 = document.createElement("td");
 
-    td1.style.width = "107px";
-    td2.style.width = "146px";
+      td1.style.width = "107px";
+      td2.style.width = "146px";
 
-    var text1 = document.createTextNode(item.name);
-    var text2 = document.createTextNode(input.value);
-    var text3 = document.createTextNode(item.price * input.value);
-    var text4 = document.createTextNode(item.id);
+      var text1 = document.createTextNode(item.name);
+      var text2 = document.createTextNode(input.value);
+      var text3 = document.createTextNode(item.price * input.value);
+      var text4 = document.createTextNode(item.id);
 
-    const del = document.createElement("button");
-    del.textContent = "X";
-    del.className = "delete";
+      const del = document.createElement("button");
+      del.textContent = "X";
+      del.className = "delete";
 
-    td1.appendChild(text1);
-    td2.appendChild(text2);
-    td3.appendChild(text3);
-    td4.appendChild(text4);
-    tr.appendChild(td1);
-    tr.appendChild(td2);
-    tr.appendChild(text3);
-    tr.appendChild(del);
+      td1.appendChild(text1);
+      td2.appendChild(text2);
+      td3.appendChild(text3);
+      td4.appendChild(text4);
 
-    table.appendChild(tr);
-    summary.appendChild(table);
+      tr.appendChild(td1);
+      tr.appendChild(td2);
+      tr.appendChild(text3);
+      tr.appendChild(del);
 
-    total.push(Number(text3.textContent));
+      table.appendChild(tr);
+      summary.appendChild(table);
 
-    totalPrice();
+      total.push(Number(text3.textContent));
 
-    deleteItem(
-      button,
-      del,
-      td4.textContent,
-      item,
-      tr,
-      Number(text3.textContent)
-    );
+      totalPrice();
 
-    button.disabled = true;
+      deleteItem(
+        button,
+        del,
+        td4.textContent,
+        item,
+        tr,
+        Number(text3.textContent)
+      );
+
+      button.disabled = true;
+    }
   });
 
   return button;
 }
-let t = 0;
 
 function deleteItem(but, del, td, i, tr, price) {
   del.addEventListener("click", () => {
@@ -155,6 +158,7 @@ function subtractItem(price) {
     sum = sum + total[i];
   }
   totalAmount.textContent = "Total Amount: " + "Rs." + sum;
+  checkSum(sum);
 }
 
 function totalPrice() {
@@ -164,5 +168,17 @@ function totalPrice() {
   }
   totalAmount.classList.remove("hide");
   totalAmount.textContent = "Total Amount: " + "Rs." + sum;
+  checkSum(sum);
 }
-console.log(total);
+
+function checkSum(sum) {
+  if (sum > 0) {
+    placeOrder.classList.remove("hide");
+  } else {
+    placeOrder.classList.add("hide");
+  }
+}
+
+placeOrder.addEventListener("click", () => {
+  alert("Order Placed");
+});
